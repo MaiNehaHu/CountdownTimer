@@ -72,7 +72,7 @@ header {
   justify-content: flex-start;
 }
 
-.recordedTimes__list,
+.recordedTimes__heading,
 .recordedTime {
   padding: 1rem 2rem;
 }
@@ -139,7 +139,7 @@ header {
     height: 40vh;
     height: 40dvh;
   }
-  .recordedTimes__list,
+  .recordedTimes__heading,
   .recordedTime {
     padding: 0.5rem 1rem;
   }

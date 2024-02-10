@@ -2,7 +2,7 @@
   const hour = document.querySelector(".hours");
   const min = document.querySelector(".mins");
   const sec = document.querySelector(".secs");
-  const list = document.querySelector(".recordedTimes__list");
+  const listSibling = document.querySelector(".listSibling");
 
   const start = document.querySelector(".start");
   const stop = document.querySelector(".stop");
@@ -61,9 +61,11 @@
     if (hour === "00" && min === "00" && sec === "00") {
       alert("Please set some countdown");
     } else if (!startFlag) {
-      alert("Start the counter first");
+      alert("The counter should be running inorder to record the time");
     } else {
-      list.insertAdjacentHTML(
+      //insert the time adjacent to the element with class listSibling
+
+      listSibling.insertAdjacentHTML(
         "afterend",
         `<p class="recordedTime"> ${recordedHour} : ${recordedMin} : ${recordedSec}</p>`
       );
