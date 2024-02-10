@@ -3,7 +3,6 @@
   const min = document.querySelector(".mins");
   const sec = document.querySelector(".secs");
   const list = document.querySelector(".recordedTimes__list");
-  const deleteBtn = document.querySelector(".deleteBtn");
 
   const start = document.querySelector(".start");
   const stop = document.querySelector(".stop");
@@ -20,8 +19,6 @@
   reset.addEventListener("click", resetCountdown);
 
   record.addEventListener("click", recordCountdown);
-
-  deleteBtn.addEventListener("click", clearRecordedTimes);
 
   function startCountdown() {
     if (hour.value === "" && min.value === "" && sec.value === "") {
