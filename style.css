@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.body {
+  width: 100%;
+  min-height: 80vh;
+  height: 80vh;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.container {
+  width: 500px;
+  height: 100%;
+
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container__labels,
+.container__inputs,
+.container__buttons {
+  width: 100%;
+
+  font-size: x-large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container__inputs__time {
+  border: none;
+  text-align: center;
+  outline: none;
+  width: 100%;
+  font-size: x-large;
+}
+
+.button {
+  all: unset;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.recordedTimes {
+  height: 100%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.recordedTimes__list,
+.recordedTime {
+  padding: 1rem 2rem;
+}
+
+.start {
+  background-color: #0015cf;
+  border: 0.2rem solid #0015cf;
+}
+.start:hover {
+  background-color: #132bff;
+  border: 0.2rem solid inherit;
+}
+.stop {
+  display: none;
+  background-color: #c70000;
+  border: 0.2rem solid #c70000;
+}
+.stop:hover {
+  background-color: #ff1515;
+  border: 0.2rem solid inherit;
+}
+.reset {
+  background-color: #ec6e00;
+  border: 0.2rem solid #ec6e00;
+}
+.reset:hover {
+  background-color: #ff920d;
+  border: 0.2rem solid inherit;
+}
+.record {
+  background-color: #000;
+  border: 0.2rem solid #000;
+}
+.record:hover {
+  background-color: #282828;
+  border: 0.2rem solid inherit;
+}
+
+.animate {
+  animation: clicked 0.5s ease;
+}
+
+@keyframes clicked {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .body {
+    gap: 2rem;
+    height: 100%;
+    flex-direction: column;
+  }
+  .container,
+  .recordedTimes {
+    width: 100%;
+  }
+  .container {
+    height: 40vh;
+    height: 40dvh;
+  }
+  .recordedTimes__list,
+  .recordedTime {
+    padding: 0.5rem 1rem;
+  }
+  .recordedTimes {
+    overflow-y: auto;
+    height: 40vh;
+    max-height: 40vh;
+    max-height: 40dvh;
+  }
+  .container__labels,
+  .container__inputs,
+  .container__buttons,
+  .container__inputs__time {
+    font-size: large;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  header {
+    font-size: small;
+  }
+}

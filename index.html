@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Testing</title>
+  </head>
+  <body>
+    <header><h1>Countdowm Timer</h1></header>
+
+    <div class="body">
+      <div class="container">
+        <div class="container__labels">
+          <p class="container__labels__hours">Hours</p>
+          <p class="container__labels__mins">Minutes</p>
+          <p class="container__labels__secs">Seconds</p>
+        </div>
+
+        <div class="container__inputs">
+          <input
+            type="number"
+            name="hour"
+            maxlength="2"
+            min="0"
+            placeholder="00"
+            class="container__inputs__time hours"
+            oninput="this.value =this.value.slice(0,this.maxLength)"
+          />
+          <p>:</p>
+          <input
+            type="number"
+            name="mins"
+            maxlength="2"
+            min="0"
+            placeholder="00"
+            class="container__inputs__time mins"
+            oninput="this.value =this.value.slice(0,this.maxLength)"
+          />
+          <p>:</p>
+          <input
+            type="number"
+            name="secs"
+            maxlength="2"
+            min="0"
+            placeholder="00"
+            class="container__inputs__time secs"
+            oninput="this.value =this.value.slice(0,this.maxLength)"
+          />
+        </div>
+
+        <div class="container__buttons">
+          <button class="button start">Start</button>
+          <button class="button stop">Pause</button>
+          <button class="button reset">Reset</button>
+          <button class="button record">Record</button>
+        </div>
+      </div>
+
+      <div class="recordedTimes">
+        <h3 class="recordedTimes__list">Recorded time: </h3>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
