@@ -10,7 +10,6 @@
   const record = document.querySelector(".record");
 
   let countDownTimer;
-  let startFlag;
 
   start.addEventListener("click", startCountdown);
 
@@ -25,9 +24,12 @@
       //If nothing is set my user. The countdown will not start
       alert("Please set some countdown");
     } else {
-      startFlag = true;
+      record.disabled = true;
+      record.style.color = "#646464";
       start.style.display = "none";
       pause.style.display = "block";
+
+      hour.disabled = min.disabled = sec.disabled = true;
 
       countDownTimer = setInterval(() => {
         timer();
@@ -38,7 +40,8 @@
   function pauseCountdown(state) {
     start.innerHTML = state === "pause" ? "Continue" : "Start";
 
-    startFlag = false;
+    record.disabled = false;
+    record.style.color = "#fff";
     start.style.display = "block";
     pause.style.display = "none";
 
@@ -49,6 +52,10 @@
     hour.value = "";
     min.value = "";
     sec.value = "";
+    record.disabled = false;
+    record.style.color = "#fff";
+
+    hour.disabled = min.disabled = sec.disabled = false;
 
     pauseCountdown();
   }
@@ -60,8 +67,6 @@
 
     if (hour === "00" && min === "00" && sec === "00") {
       alert("Please set some countdown");
-    } else if (!startFlag) {
-      alert("The counter should be running inorder to record the time");
     } else {
       //insert the time adjacent to the element with class listSibling
 
