@@ -85,7 +85,7 @@
     //if minutes is entered but not hours and seconds
     else if (sec.value == "" && min.value != 0) {
       if (min.value > 60) {
-        min.value++;
+        hour.value++;
         min.value = parseInt(min.value) - 60;
       }
 
