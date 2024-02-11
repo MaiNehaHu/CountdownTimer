@@ -85,12 +85,12 @@ header {
   background-color: #132bff;
   border: 0.2rem solid inherit;
 }
-.stop {
+.pause {
   display: none;
   background-color: #c70000;
   border: 0.2rem solid #c70000;
 }
-.stop:hover {
+.pause:hover {
   background-color: #ff1515;
   border: 0.2rem solid inherit;
 }

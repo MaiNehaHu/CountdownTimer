@@ -5,7 +5,7 @@
   const listSibling = document.querySelector(".listSibling");
 
   const start = document.querySelector(".start");
-  const stop = document.querySelector(".stop");
+  const pause = document.querySelector(".pause");
   const reset = document.querySelector(".reset");
   const record = document.querySelector(".record");
 
@@ -14,7 +14,7 @@
 
   start.addEventListener("click", startCountdown);
 
-  stop.addEventListener("click", () => stopCountdown("pause"));
+  pause.addEventListener("click", () => pauseCountdown("pause"));
 
   reset.addEventListener("click", resetCountdown);
 
@@ -27,7 +27,7 @@
     } else {
       startFlag = true;
       start.style.display = "none";
-      stop.style.display = "block";
+      pause.style.display = "block";
 
       countDownTimer = setInterval(() => {
         timer();
@@ -35,12 +35,12 @@
     }
   }
 
-  function stopCountdown(state) {
+  function pauseCountdown(state) {
     start.innerHTML = state === "pause" ? "Continue" : "Start";
 
     startFlag = false;
     start.style.display = "block";
-    stop.style.display = "none";
+    pause.style.display = "none";
 
     clearInterval(countDownTimer);
   }
@@ -50,7 +50,7 @@
     min.value = "";
     sec.value = "";
 
-    stopCountdown();
+    pauseCountdown();
   }
 
   function recordCountdown() {
