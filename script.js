@@ -24,8 +24,8 @@
       //If nothing is set my user. The countdown will not start
       alert("Please set some countdown");
     } else {
-      record.disabled = true;
-      record.style.color = "#646464";
+      record.disabled = false;
+      record.style.color = "#fff";
       start.style.display = "none";
       pause.style.display = "block";
 
@@ -40,8 +40,8 @@
   function pauseCountdown(state) {
     start.innerHTML = state === "pause" ? "Continue" : "Start";
 
-    record.disabled = false;
-    record.style.color = "#fff";
+    record.disabled = true;
+    record.style.color = "#646464";
     start.style.display = "block";
     pause.style.display = "none";
 
