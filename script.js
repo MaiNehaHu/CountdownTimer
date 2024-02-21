@@ -88,7 +88,7 @@
       sec.value = `${sec.value <= 10 ? "0" : ""}${sec.value - 1}`;
     }
     //if minutes is entered but not hours and seconds
-    else if (sec.value == "" && min.value != 0) {
+    else if ((sec.value == "00" || sec.value == "") && min.value != 0) {
       if (min.value > 60) {
         hour.value++;
         min.value = parseInt(min.value) - 60;
@@ -98,10 +98,12 @@
       min.value = `${min.value <= 10 ? "0" : ""}${min.value - 1}`;
     }
     //if only hour is entered and not min and seconds
-    else if (sec.value == "" && min.value == "" && hour.value != 0) {
+    else if ((sec.value == "00" || sec.value == "") && (min.value == "00" || min.value == "") && hour.value != 0) {
       min.value = 60;
       hour.value = `${hour.value <= 10 ? "0" : ""}${hour.value - 1}`;
-    } else {
+    }
+    //if end
+    else if (sec.value == "" || sec.value == "00" && min.value == "" || min.value == "00" && hour.value == "" || hour.value == "00") {
       resetCountdown();
     }
   }
