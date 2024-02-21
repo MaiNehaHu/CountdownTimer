@@ -65,7 +65,7 @@ header {
 
 .recordedTimes {
   height: 100%;
-  width: 200px;
+  width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
