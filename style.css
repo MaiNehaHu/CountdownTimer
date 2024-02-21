@@ -70,6 +70,8 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-color: #98a3ff;
+  border-radius: 1rem;
 }
 
 .recordedTimes__heading,
@@ -148,6 +150,8 @@ header {
     height: 40vh;
     max-height: 40vh;
     max-height: 40dvh;
+    background-color: #fff;
+    border-top:  1px solid;
   }
   .container__labels,
   .container__inputs,
